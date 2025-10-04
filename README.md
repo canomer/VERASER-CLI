@@ -20,14 +20,14 @@ VERASER is a professional-grade secure deletion tool that goes beyond simple fil
 
 ### Key Highlights
 
-- ** Military-Grade Security**: Implements DoD 5220.22-M, NIST 800-88, and Gutmann algorithms
-- ** SSD-Optimized**: Advanced encrypt-in-place technique for solid-state drives
-- ** Cross-Platform**: Single codebase for Windows, Linux, and macOS
-- ** Dual-Mode Operation**: Use as CLI tool or integrate as a library
-- ** Cryptography**: Uses platform-native CSPRNGs and AES-256-CTR encryption
-- ** Zero Dependencies**: Self-contained implementation (OpenSSL optional on POSIX)
-- ** High Performance**: Optimized I/O with configurable chunk sizes (default 8 MiB)
-- ** Recursive Processing**: Handles entire directory trees with automatic cleanup
+- **Military-Grade Security**: Implements DoD 5220.22-M, NIST 800-88, and Gutmann algorithms
+- **SSD-Optimized**: Advanced encrypt-in-place technique for solid-state drives
+- **Cross-Platform**: Single codebase for Windows, Linux, and macOS
+- **Dual-Mode Operation**: Use as CLI tool or integrate as a library
+- **Cryptography**: Uses platform-native CSPRNGs and AES-256-CTR encryption
+- **Zero Dependencies**: Self-contained implementation (OpenSSL optional on POSIX)
+- **High Performance**: Optimized I/O with configurable chunk sizes (default 8 MiB)
+- **Recursive Processing**: Handles entire directory trees with automatic cleanup
 
 ---
 
