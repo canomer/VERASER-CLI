@@ -548,7 +548,7 @@ This software is provided "as is", without warranty of any kind. The authors are
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/veraser/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/veraser/discussions)
-- **Security**: For security concerns, email security@example.com (PGP key available)
+- **Security**: For security concerns, email can.omer.5306@outlook.com (PGP key available)
 
 ---
 
