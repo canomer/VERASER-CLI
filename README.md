@@ -12,13 +12,9 @@
 
 A modern, cross-platform secure file erasure engine designed for permanent data destruction with military-grade algorithms and SSD-optimized techniques.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](https://github.com/yourusername/veraser)
-[![C Standard](https://img.shields.io/badge/C-C99+-blue.svg)](https://en.wikipedia.org/wiki/C99)
-
 ---
 
-## 🎯 Overview
+## Overview
 
 VERASER is a professional-grade secure deletion tool that goes beyond simple file deletion. When you delete a file normally, the operating system only removes the reference to that file—the actual data remains on the disk until overwritten. VERASER ensures that deleted data is truly irrecoverable by using cryptographic techniques and industry-standard overwriting algorithms.
 
@@ -26,18 +22,18 @@ VERASER is a professional-grade secure deletion tool that goes beyond simple fil
 
 - **🔒 Military-Grade Security**: Implements DoD 5220.22-M, NIST 800-88, and Gutmann algorithms
 - **⚡ SSD-Optimized**: Advanced encrypt-in-place technique for solid-state drives
-- **🌐 True Cross-Platform**: Single codebase for Windows, Linux, and macOS
+- **🌐 Cross-Platform**: Single codebase for Windows, Linux, and macOS
 - **🛠️ Dual-Mode Operation**: Use as CLI tool or integrate as a library
-- **🔐 Cryptographically Secure**: Uses platform-native CSPRNGs and AES-256-CTR encryption
+- **🔐 Cryptography**: Uses platform-native CSPRNGs and AES-256-CTR encryption
 - **📦 Zero Dependencies**: Self-contained implementation (OpenSSL optional on POSIX)
 - **🚀 High Performance**: Optimized I/O with configurable chunk sizes (default 8 MiB)
 - **🗂️ Recursive Processing**: Handles entire directory trees with automatic cleanup
 
 ---
 
-## 🏗️ Architecture & Engineering
+## Architecture & Engineering
 
-### Design Philosophy
+### Design
 
 VERASER follows a **PRD-driven architecture** with clear separation between HDD-oriented overwrite algorithms and SSD-optimized encryption flows. The codebase is intentionally monolithic (`veraser.c` + `veraser.h`) to facilitate:
 
@@ -69,7 +65,7 @@ The implementation uses conditional compilation to provide native platform suppo
 
 ---
 
-## 🔬 How It Works
+## How It Works
 
 ### HDD Algorithm Flow (Traditional Overwrites)
 
@@ -136,19 +132,19 @@ For solid-state drives, traditional overwriting is ineffective due to wear-level
 
 ---
 
-## 🧪 Supported Algorithms
+## Supported Algorithms
 
 ### Quick Reference Table
 
 | Algorithm | Passes | Use Case | Speed | Security Level |
 |-----------|--------|----------|-------|----------------|
-| **zero** | 1 | Quick wipe, pre-provisioning | ⚡⚡⚡⚡⚡ | ⭐⭐ |
-| **random** | 1-N | General-purpose secure deletion | ⚡⚡⚡⚡ | ⭐⭐⭐⭐ |
-| **nist** | 1 | **Recommended default** for modern drives | ⚡⚡⚡⚡ | ⭐⭐⭐⭐ |
-| **dod3** | 3 | DoD 5220.22-M compliance | ⚡⚡⚡ | ⭐⭐⭐⭐ |
-| **dod7** | 7 | Enhanced DoD compliance | ⚡⚡ | ⭐⭐⭐⭐⭐ |
-| **gutmann** | 35 | Historical maximum (overkill for modern drives) | ⚡ | ⭐⭐⭐⭐⭐ |
-| **ssd** | 1 | **Recommended for SSD/NVMe** | ⚡⚡⚡⚡⚡ | ⭐⭐⭐⭐⭐ |
+| **zero** | 1 | Quick wipe, pre-provisioning | 5/5 | 2/5 |
+| **random** | 1-N | General-purpose secure deletion | 4/5 | 4/5 |
+| **nist** | 1 | **Recommended default** for modern drives | 4/5 | 4/5 |
+| **dod3** | 3 | DoD 5220.22-M compliance | 3/5 | 4/5 |
+| **dod7** | 7 | Enhanced DoD compliance | 2/5 | 5/5 |
+| **gutmann** | 35 | Historical maximum (overkill for modern drives) | 1/5 | 5/5 |
+| **ssd** | 1 | **Recommended for SSD/NVMe** | 5/5 | 5/5 |
 
 ### Algorithm Details
 
@@ -179,7 +175,7 @@ Modern approach for solid-state storage:
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -358,22 +354,22 @@ typedef struct {
 
 ---
 
-## 🔐 Security Considerations
+## Security Considerations
 
 ### What VERASER Protects Against
 
-✅ **File recovery tools** (Recuva, PhotoRec, etc.)  
-✅ **Forensic data carving** from unallocated space  
-✅ **Simple file system analysis** (directory listings, metadata)  
-✅ **Basic disk imaging** without specialized equipment  
+**File recovery tools** (Recuva, PhotoRec, etc.)  
+**Forensic data carving** from unallocated space  
+**Simple file system analysis** (directory listings, metadata)  
+**Basic disk imaging** without specialized equipment  
 
 ### What VERASER Does NOT Protect Against
 
-❌ **Physical disk dissection** (electron microscopy in lab conditions)  
-❌ **Firmware-level attacks** on compromised storage controllers  
-❌ **Data already backed up** elsewhere (cloud, external drives, RAID mirrors)  
-❌ **Operating system caches** (swap, hibernation files, temporary files)  
-❌ **Hardware wear-leveling** on SSDs (residual data in spare blocks - mitigated by encryption + TRIM)  
+**Physical disk dissection** (electron microscopy in lab conditions)  
+**Firmware-level attacks** on compromised storage controllers  
+**Data already backed up** elsewhere (cloud, external drives, RAID mirrors)  
+**Operating system caches** (swap, hibernation files, temporary files)  
+**Hardware wear-leveling** on SSDs (residual data in spare blocks - mitigated by encryption + TRIM)  
 
 ### Best Practices
 
@@ -388,7 +384,7 @@ typedef struct {
 
 ---
 
-## 🛡️ Limitations & Caveats
+## Limitations & Caveats
 
 ### Known Limitations
 
@@ -418,7 +414,7 @@ typedef struct {
 
 ---
 
-## 🧩 Integration Examples
+## Integration Examples
 
 ### VeraCrypt Integration
 
@@ -477,7 +473,7 @@ done
 
 ---
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 Tested on Ubuntu 22.04, Intel i7-12700K, various storage devices:
 
@@ -493,7 +489,7 @@ Tested on Ubuntu 22.04, Intel i7-12700K, various storage devices:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Areas of interest:
 
@@ -531,7 +527,7 @@ gcc -g -O0 -Wall -Wextra -std=c99 -DVE_BUILD_CLI -DVE_USE_OPENSSL \
 
 ---
 
-## 📜 License
+## License
 
 MIT License - See [LICENSE](LICENSE) file for details.
 
@@ -539,7 +535,7 @@ This software is provided "as is", without warranty of any kind. The authors are
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **VeraCrypt Project**: Inspiration for robust cross-platform crypto tools
 - **Eraser Project**: Original Windows secure deletion tool
@@ -548,7 +544,7 @@ This software is provided "as is", without warranty of any kind. The authors are
 
 ---
 
-## 📞 Support & Contact
+## Support & Contact
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/veraser/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/veraser/discussions)
@@ -556,28 +552,26 @@ This software is provided "as is", without warranty of any kind. The authors are
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 ### Version 1.0 (Current)
-- ✅ Core erasure algorithms
-- ✅ Cross-platform support
-- ✅ CLI interface
-- ✅ Library API
+- Core erasure algorithms
+- Cross-platform support
+- CLI interface
+- Library API
 
 ### Version 1.1 (Planned)
-- ⏳ Automatic device detection
-- ⏳ Progress reporting callbacks
-- ⏳ Multi-threaded directory processing
-- ⏳ Comprehensive test suite
+- Automatic device detection
+- Progress reporting callbacks
+- Multi-threaded directory processing
+- Comprehensive test suite
 
 ### Version 2.0 (Future)
-- 📋 GUI application
-- 📋 Scheduled/automatic erasure
-- 📋 Integration with major file managers
-- 📋 Enterprise policy management
+- GUI application
+- Scheduled/automatic erasure
+- Integration with major file managers
+- Enterprise policy management
 
 ---
 
 **Remember**: Secure deletion is only one part of data security. Always use full-disk encryption, secure backups, and proper access controls for comprehensive protection.
-
-**Stay secure! 🔒**
