@@ -233,7 +233,7 @@ gcc -O2 -Wall -std=c99 -c veraser.c -o veraser.o
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### Command-Line Interface
 
